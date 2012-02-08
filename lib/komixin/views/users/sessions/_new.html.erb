@@ -1,0 +1,20 @@
+<div class="auth-form">
+<h2><%= t(:signing_in) -%></h2>
+
+<%= form_for(resource, :as => resource_name, :url => :sign_in) do |f| %>
+  <p><%= f.label :email, "Login lub e-mail" %><br />
+  <%= f.text_field :email %></p>
+
+  <p><%= f.label :password, "Hasło" %><br />
+  <%= f.password_field :password %></p>
+
+  <% if devise_mapping.rememberable? -%>
+    <p><%= f.check_box :remember_me %> <%= f.label :remember_me %>
+      (<%= distance_of_time_in_words(Settings.devise.remember_for) %>)
+    </p>
+  <% end -%>
+
+  <p><%= f.submit t(:sign_in) %></p>
+  <p><%= link_to t(:recover_password), new_password_path(resource_name) %></p>
+<% end %>
+</div>

@@ -1,0 +1,17 @@
+.comic(id = "comic-#{@comic.id}")
+  %h1.title
+    = link_to @comic.title, comic_path(@comic)
+    .author autor: #{link_to @comic.author.username, index_by_username_comics_path(@comic.author.username)}
+  .info
+    .tags= @comic.tags.join(" ").downcase
+    .actions
+      = link_to("edytuj opis komiksu", edit_comic_path(@comic)) if @comic.author == current_user
+      = link_to("usuń komiks", comic_path(@comic), :confirm => 'Jesteś pewny?', :method => :delete) if @comic.deleteable?(current_user)
+      = link_to "lubię (#{content_tag :span, @comic.likes.count, :class => 'likes'})".html_safe, like_comic_path(@comic), :remote => (current_user ? true : false), 'data-type' => :json, :class => 'vote'
+      = link_to "nie lubię (#{content_tag :span, @comic.dislikes.count, :class => 'dislikes'})".html_safe, dislike_comic_path(@comic), :remote => (current_user ? true : false), 'data-type' => :json, :class => 'vote'
+      = link_to "komentarze (#{@comic.comments.size})", comic_path(@comic, :anchor => "comments-index")
+    %br.cb
+  = link_to image_tag(@comic.image.url, :alt => @comic.title, :size => @comic.image_resolution), comic_path(@comic)
+  %p{:class => 'desc'}
+    %fb:like(href="#{comic_url(@comic, :host => request.host)}" layout="button_count" show_faces="false" width="100" font="tahoma" colorscheme="dark" class="fblike")
+    = linkify(@comic.description.gsub("\n",'<br/>')) if @comic.description

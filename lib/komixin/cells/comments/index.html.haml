@@ -1,0 +1,7 @@
+%div{:id => "comments-index", :class => "comments"}
+  %h1= t(:comments)
+  - unless @comments.empty?
+    - @comments.each do |comment|
+      = render_cell :comments, :show, :comment => comment
+  - else
+    %p= t('lack_of_comments')

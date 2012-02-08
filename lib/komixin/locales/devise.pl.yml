@@ -1,0 +1,50 @@
+ pl:
+
+  errors:
+    messages:
+      not_found: "nie został znaleziony"
+      already_confirmed: "już został potwierdzony"
+      not_locked: "was not locked"
+      not_saved: "Wystąpiły błędy!"
+
+  devise:
+    failure:
+      unauthenticated: 'Najpierw musisz się zalogować lub zarejestrować.'
+      unconfirmed: 'Najpierw musisz potwierdzic konto.'
+      locked: 'Your account is locked.'
+      invalid: 'Nieprawidłowy login, e-mail lub hasło.'
+      invalid_token: 'Invalid authentication token.'
+      timeout: 'Twoja sesja wygasła, zaloguj się ponownie.'
+      inactive: 'Twoje konto nie zostało jeszcze aktywowane.'
+    sessions:
+      signed_in: 'Zalogowałeś się pomyślnie.'
+      signed_out: 'Wylogowałeś się pomyślnie.'
+    passwords:
+      send_instructions: 'W ciągu kilku minut otrzymasz e-mail z instrukcjami jak zresetować hasło.'
+      updated: 'Twoje hasło zostało zmienione domyślnie. Jesteś zalogowany.'
+    confirmations:
+      send_instructions: 'W ciągu kilku minut otrzymasz e-mail z instrukcjami jak potwierdzić konto.'
+      confirmed: 'Twoje konto zostało aktywowane. Jesteś zalogowany.'
+    registrations:
+      signed_up: 'Zarejestrowałeś się pomyślnie. Potwierdzenie zostało wysłane na twój adres e-mail.'
+      update: 'Dane zostały zaktualizowane pomyślnie.'
+      destroyed: 'Bye! Your account was successfully cancelled. We hope to see you again soon.'
+      user:
+        inactive_signed_up: "Konto zostało założone. Wysłaliśmy maila na adres e-mail, który podałeś. Kliknij na linka w mailu, aby potwierdzić konto."
+    unlocks:
+      send_instructions: 'You will receive an email with instructions about how to unlock your account in a few minutes.'
+      unlocked: 'Your account was successfully unlocked. You are now signed in.'
+    mailer:
+      confirmation_instructions:
+        subject: 'Potwierdzenie rejestracji'
+      reset_password_instructions:
+        subject: 'Zmiana hasła'
+      unlock_instructions:
+        subject: 'Unlock Instructions'
+   
+    omniauth_callbacks:
+      facebook:
+        success: 'Zalogowałeś się pomyślnie.'
+        error: 'Wystąpił błąd logowania przez facebooka.'
+        unverified: 'Facebook user unverified'
+      success: 'Successfully authorized from %{kind} account.'

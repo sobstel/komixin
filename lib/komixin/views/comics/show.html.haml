@@ -1,0 +1,10 @@
+- title @comic.title
+
+= render_cell :comics, :show, :comic => @comic
+= render_cell :blocks, :dfp_body, :id => '300x250'
+%p
+  = "#{I18n.t 'comic.created_at'} #{@comic.created_at.strftime("%Y-%m-%d")}." if @comic.created_at
+  = "#{I18n.t 'comic.kudoed_at'} #{@comic.kudoed_at.strftime("%Y-%m-%d")}." if @comic.kudoed_at
+= content_tag :p, "Komiks jest prywatny (tj. nie wyświetla się na żadnej liście i jest widoczny tylko pod tym linkiem)." if @comic.private?
+= render_cell :comments, :new, :comment => @comic.comments.new
+= render_cell :comments, :index, :comments => @comic.comments

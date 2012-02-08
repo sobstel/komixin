@@ -1,0 +1,6 @@
+%div{:class => "comment", :id => "comment-#{@comment.id}"}
+  %strong #{@comment.user.username}
+  (#{@comment.created_at.strftime("%Y-%m-%d %H:%M")})
+  %br
+  #{linkify(h(@comment.comment).gsub(/\n/, '<br>'))}
+

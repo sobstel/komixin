@@ -1,0 +1,18 @@
+<h2>Edycja komiksu</h2>
+
+<%= form_for(@comic, :html => { :multipart => true}) do |f| %>
+  <%= error_messages(@comic) %>
+  <p><%= f.label :title %><br />
+  <%= f.text_field :title %></p>
+  <p><%= f.label :description %><br />
+  <%= f.text_area :description %></p>
+  <p><%= f.label :tag_list %><br />
+  <%= f.text_field :tag_list, :name => "comic[tags]" %></p>
+  <% if @comic.private? %>
+  <p>
+    <%= f.check_box :private %> <%= f.label :private %>
+    (komiks upubliczniony nie może już zostać ukryty)
+  </p>
+  <% end %>
+  <p><%= f.submit t('form.edit') %></p>
+<% end %>

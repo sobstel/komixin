@@ -1,0 +1,12 @@
+<div id="comments-new">
+<h1><%= t('add-comment') %></h1>
+
+<%= form_for @comment, :url => comic_comments_path(:comic_id => @comment.commentable_id) do |f| %>
+  <%= error_messages(@comment) %>
+
+  <p><%= f.label :comment %><br />
+  <%= f.text_area :comment %></p>
+
+  <p><%= f.submit t('form.add') %></p>
+<% end %>
+</div>

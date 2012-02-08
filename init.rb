@@ -1,0 +1,2 @@
+require 'komixin'
+Komixin.setup

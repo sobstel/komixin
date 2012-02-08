@@ -1,0 +1,9 @@
+<h2>Nowy komiks</h2>
+
+<%= form_for(@comic, :html => { :multipart => true}) do |f| %>
+  <p><%= f.label :title, "Tytul" %><br />
+  <%= f.text_field :title %></p>
+  <%= f.file_field :image %>
+  <p><%= f.submit "Dodaj" %></p>
+<% end %>
+

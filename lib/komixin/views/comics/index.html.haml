@@ -1,0 +1,8 @@
+- title(@title) if @title
+- random_comic_i = rand(@comics.size)
+%p= "Pusto." if @comics.empty?
+- @comics.each_with_index do |comic, i|
+  = render_cell :comics, :show, :comic => comic
+  = render_cell :blocks, :dfp_body, :id => '728x90' if i == 0 || i == random_comic_i
+= paginate @comics, :window => 6, :param_name => "s"
+%br{:class => "cb"}

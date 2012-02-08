@@ -1,0 +1,39 @@
+pl:
+  # msg
+  msg:
+    comic:
+      deleted: "Komiks został usunięty!"
+      liked: "Lubisz ten komiks."
+      already_liked: "Polubiłeś ten komiks już wcześniej."
+      disliked: "Nie lubisz tego komiksu."
+      already_disliked: "Nie polubiłeś tego komiksu już wcześniej."
+    comment:
+      added: "Komentarz dodany!"
+
+  # form
+  form:
+    add: "Dodaj"
+    edit: "Zmień"
+
+  # auth
+  signing_in: "Logowanie"
+  sign_in: "Zaloguj się"
+  signing_up: ""
+  sign_up: ""
+  sign_in_with_facebook: "Zaloguj się przez Facebooka"
+  recover_password: "Przypomnij hasło"
+
+  # pagination
+  pagination:
+    previous: "Poprzednie"
+    next: "Następne" 
+
+  # comics
+  comic:
+    created_at: "Stworzony: "
+    kudoed_at: "Wybrany: "
+
+  # comments
+  comments: "Komentarze"
+  add-comment: "Dodaj komentarz"
+  lack_of_comments: "Brak komentarzy."

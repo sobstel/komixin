@@ -1,0 +1,19 @@
+pl:
+  activerecord:
+    models:
+      comic: "Komiks"
+      comment: "Komentarz"
+      user: "Użytkownik"
+    attributes:
+      comic:
+        title: "Tytuł"
+        description: "Opis"
+        tag_list: "Tagi"
+        private: "Prywatny (ukryty)"
+      comment:
+        comment: "Komentarz"
+      user:
+        username: "Login"
+        email: "E-mail"
+        password: "Hasło"
+        remember_me: "Zapamiętaj mnie"
